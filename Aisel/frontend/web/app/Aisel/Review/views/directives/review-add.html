@@ -1,0 +1,27 @@
+<form name="addReviewForm" role="form" ng-submit="addReview()">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text"
+               ng-required="true"
+               ng-model="name"
+               class="form-control"
+               id="name">
+    </div>
+
+    <strong>Content</strong>
+    <textarea class="form-control"
+              rows="8"
+              ng-required="true"
+              name="content"
+              ng-model="content">
+    </textarea>
+    <br class="divider">
+
+    <div class="input-group pull-left">
+        <button type="submit"
+                ng-disabled="isDisabled"
+                class="btn btn-primary">
+            Add Review
+        </button>
+    </div>
+</form>

@@ -1,0 +1,11 @@
+# This file is part of the Aisel package.
+#
+# (c) Ivan Proskuryakov
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+api_aisel_contact_send:
+    path: /%frontend_api%/contact/form/
+    defaults: { _controller: AiselContactBundle:Api:sendMessage, _format: json }
+    methods: [POST]

@@ -1,0 +1,42 @@
+# This file is part of the Aisel package.
+#
+# (c) Ivan Proskuryakov
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+api_aisel_page_get:
+    path:  /{locale}/page/
+    defaults: { _controller: AiselPageBundle:Frontend/ApiPage:getCollection, _format: json }
+    methods: [GET]
+
+api_aisel_page_get_by_url:
+    path:  /{locale}/page/{url}
+    defaults: { _controller: AiselPageBundle:Frontend/ApiPage:getByURL, _format: json }
+    methods: [GET]
+
+api_aisel_page_node_get:
+    path:  /{locale}/page/node/
+    defaults: { _controller: AiselPageBundle:Frontend/ApiNode:getCollection, _format: json }
+    methods: [GET]
+
+api_aisel_page_node_get_by_url:
+    path:  /{locale}/page/node/{url}
+    defaults: { _controller: AiselPageBundle:Frontend/ApiNode:getByURL, _format: json }
+    methods: [GET]
+
+api_aisel_page_node_get_tree:
+    path:  /{locale}/page/node/tree/
+    defaults: { _controller: AiselPageBundle:Frontend/ApiNode:getTree, _format: json }
+    methods: [GET]
+
+#Review
+api_aisel_page_review_post:
+    path:  /{locale}/page/review/
+    defaults: { _controller: AiselPageBundle:Frontend/ApiReview:post, _format: json }
+    methods: [POST]
+
+api_aisel_page_review_get:
+    path:  /{locale}/page/review/{id}
+    defaults: { _controller: AiselPageBundle:Frontend/ApiReview:get, _format: json }
+    methods: [GET]

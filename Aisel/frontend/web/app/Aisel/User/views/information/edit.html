@@ -1,0 +1,49 @@
+<div class="col-md-3">
+</div>
+<div class="col-md-6">
+    <form class="form-horizontal"
+          name="updateAccountForm"
+          ng-submit="updateAccount(updateAccountForm)">
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="twitter">Phone</label>
+                <input type="text"
+                       class="form-control"
+                       id="phone"
+                       ng-model="user.phone"
+                       placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="twitter">Twitter</label>
+                <input type="text"
+                       class="form-control"
+                       id="twitter"
+                       ng-model="user.twitter"
+                       placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="facebook">Facebook</label>
+                <input type="text"
+                       class="form-control"
+                       id="facebook"
+                       ng-model="user.facebook"
+                       placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="about">About</label>
+                <input type="text"
+                       class="form-control"
+                       id="about"
+                       ng-model="user.about"
+                       placeholder="">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save settings</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+<div class="col-md-3">
+</div>

@@ -1,0 +1,73 @@
+<div class="">
+    <div class="col-md-12 page-header">
+        <h2>Order #{{orderId}}</h2>
+    </div>
+    <div class="" ng-if="user">
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+
+                        <!-- Order Details -->
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4>General information</h4>
+                                    Oder date: {{orderDetails.created_at | date:"MM/dd/yyyy @ h:mma" }}<br/>
+                                    Status: {{orderDetails.status}}<br/>
+                                    Total: {{orderDetails.totalamount}} {{orderDetails.currency}}<br/>
+                                    Comment: {{orderDetails.description}}<br/>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>Billing information</h4>
+                                    Country: {{orderDetails.country}}<br/>
+                                    Region: {{orderDetails.region}}<br/>
+                                    City: {{orderDetails.city}}<br/>
+                                    Phone: {{orderDetails.phone}}<br/>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <!-- Order Items -->
+                        <div class="col-md-12">
+                            <div ng-if="orderDetails.item.length > 0">
+                                <div class="cartItem row" ng-repeat="item in orderDetails.item">
+                                    <div class="col-md-2">
+                                        <aisel-product-images
+                                                class="product-image"
+                                                img-style="img-rounded"
+                                                slider="false"
+                                                images="item.product.medias">
+                                        </aisel-product-images>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>{{item.product.name}}</strong>
+                                    </div>
+                                    <div class="col-md-4">
+                                        {{item.product.price}} {{currency}}
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="pull-right">
+                                            <div class="alert alert-warning" role="alert">
+                                                {{item.product.price}}
+                                                {{currency}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
+            <div class="sidebar" ng-include="'/app/Aisel/User/views/sidebar.html'"></div>
+        </div>
+    </div>
+</div>

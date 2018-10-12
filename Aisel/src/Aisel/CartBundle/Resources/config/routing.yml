@@ -1,0 +1,21 @@
+# This file is part of the Aisel package.
+#
+# (c) Ivan Proskuryakov
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+api_aisel_cart_details:
+    path:  /%frontend_api%/cart/
+    defaults: { _controller: AiselCartBundle:ApiCart:cart, _format: json }
+    methods: [GET]
+
+api_aisel_cart_product_add:
+    path:  /%frontend_api%/cart/product/{productId}/add/{qty}
+    defaults: { _controller: AiselCartBundle:ApiCart:productAdd, _format: json }
+    methods: [PUT]
+
+api_aisel_cart_product_qty:
+    path:  /%frontend_api%/cart/product/{productId}/qty/{qty}
+    defaults: { _controller: AiselCartBundle:ApiCart:productQtyUpdate, _format: json }
+    methods: [PUT]

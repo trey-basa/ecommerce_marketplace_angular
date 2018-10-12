@@ -1,0 +1,14 @@
+<div ng-if="slider == false" ng-repeat="image in images">
+    <img class="{{style}} product-image"
+         ng-if="image.main_image === true"
+         src="{{media}}{{image.filename}}"
+         data-holder-rendered="true"
+         style="width: {{width}}; height: {{height}}"
+    />
+</div>
+
+<uib-carousel ng-if="slider == true">
+    <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+        <img ng-src="{{slide.image}}">
+    </uib-slide>
+</uib-carousel>

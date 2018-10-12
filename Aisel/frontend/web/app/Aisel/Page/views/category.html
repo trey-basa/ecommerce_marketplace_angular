@@ -1,0 +1,24 @@
+<div class="">
+    <div class="col-xs-12 page-header">
+        <h2>Page categories</h2>
+        <p class="">
+            <span class="glyphicon glyphicon-circle-arrow-left"></span>
+            <a ui-sref="pages({locale: locale})">Back to pages</a>
+        </p>
+    </div>
+
+    <div class="col-xs-12 col-md-12">
+        <ul class="pageList">
+            <li ng-repeat="category in collection.collection">
+                <h2>
+                    <a ui-sref="pageCategoryView({locale: locale, categoryId:category.meta_url})" class="thumb">
+                        {{category.name}}
+                    </a>
+                </h2>
+                <p ng-bind-html="category.content"></p>
+                <hr/>
+            </li>
+        </ul>
+        <div ng-include="'/app/Aisel/Kernel/views/pagination.html'"></div>
+    </div>
+</div>

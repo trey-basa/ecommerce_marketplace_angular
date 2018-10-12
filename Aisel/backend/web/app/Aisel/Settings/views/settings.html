@@ -1,0 +1,91 @@
+<!-- Heading actions -->
+<div class="col-md-12 page-header">
+    <div class="row">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 style="margin:0">Settings</h2>
+            </div>
+            <div class="col-md-8 nav-buttons">
+                <div class="pull-right">
+                    <button type="submit"
+                            ng-click="save()"
+                            class="btn btn-success">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-horizontal-edit" name="settingsForm" role="form">
+            <tabset>
+                <tab ng-repeat="locale in availableLocales">
+                    <tab-heading>
+                        <i class="glyphicon glyphicon-th-list"></i> {{locale}}
+                    </tab-heading>
+                    <div class="tab-content">
+                        <div class="section" ng-repeat="(section, sectionData) in config.fields">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <h2>{{section}}</h2>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="section" ng-repeat="(name,field) in sectionData.fields">
+                                        <div class="form-group">
+                                            <label for="locale[{{section}}][{{name}}]">{{name}}</label>
+                                            <input ng-if="field.type == 'input'"
+                                                   name="locale[{{section}}][{{name}}]"
+                                                   id="locale[{{section}}][{{name}}]"
+                                                   type="text"
+                                                   ng-model="config.settings[locale][section][name]"
+                                                   class="form-control"
+                                                   ng-required="false"/>
+
+                                            <textarea text-angular ng-if="field.type == 'wysiwyg'"
+                                                      name="{{locale}}locale[{{section}}][{{name}}]"
+                                                      id="locale[{{section}}][{{name}}]"
+                                                      type="text"
+                                                      ng-model="config.settings[locale][section][name]"
+                                                      class="form-control"
+                                                      rows="10"
+                                                      ng-required="false">
+                                                {{config.settings[locale][section][name]}}
+                                            </textarea>
+
+                                            <textarea ng-if="field.type == 'textarea'"
+                                                      name="locale[{{section}}][{{name}}]"
+                                                      id="locale[{{section}}][{{name}}]"
+                                                      type="text"
+                                                      ng-model="config.settings[locale][section][name]"
+                                                      class="form-control"
+                                                      rows="10"
+                                                      ng-required="false">
+                                                {{config.settings[locale][section][name]}}
+                                            </textarea>
+
+                                            <select ng-if="field.type == 'select'"
+                                                    name="locale[{{section}}][{{name}}]"
+                                                    id="locale[{{section}}][{{name}}]"
+                                                    type="text"
+                                                    ng-model="config.settings[locale][section][name]"
+                                                    class="form-control"
+                                                    ng-required="false">
+                                                <option ng-repeat="(key,option) in field.options"
+                                                        value="{{key}}">
+                                                    {{option}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+        </form>
+    </div>
+</div>

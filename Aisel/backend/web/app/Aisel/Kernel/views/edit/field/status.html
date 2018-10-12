@@ -1,0 +1,11 @@
+<div class="form-group">
+    <label for="status">Status</label>
+    <select id="status"
+            class="form-control"
+            ng-required="true"
+            ng-model="item.status"
+            name="status">
+        <option value="1" ng-selected="item.status === true">Enabled</option>
+        <option value="0" ng-selected="item.status === false">Disabled</option>
+    </select>
+</div>

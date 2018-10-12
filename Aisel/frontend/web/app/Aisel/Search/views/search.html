@@ -1,0 +1,36 @@
+<div class="col-xs-12 page-header">
+    <h2>Search results for: "{{queryText}}"</h2>
+</div>
+<div class="col-xs-12">
+    <div class="form-group">
+        <label for="searchQuery">Search</label>
+        <input id="searchQuery"
+               ng-search-redirect="{{search}}"
+               ng-model="search"
+               placeholder="Search for ..."
+               class="form-control">
+    </div>
+    <hr/>
+    <div ng-if="collection.collection">
+        <ul class="pageList">
+            <li ng-repeat="page in collection.collection">
+                <h2>
+                    <a ui-sref="pageView({locale: locale, pageId:page.meta_url})"
+                       class="thumb">{{page.name}}</a>
+                </h2>
+
+                <p>{{page.content}}</p>
+
+                <p><span class="glyphicon glyphicon-calendar"></span>
+                    {{page.created_at | date:"MM/dd/yyyy @ h:mma" }}</p>
+                <hr/>
+            </li>
+        </ul>
+        <div ng-include="'/app/Aisel/Kernel/views/pagination.html'"></div>
+    </div>
+    <div class="pageList" ng-if="collection.collection == false">
+        <h3>Nothing was found :(</h3>
+    </div>
+
+
+</div>

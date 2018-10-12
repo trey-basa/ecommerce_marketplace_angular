@@ -1,0 +1,50 @@
+<div class="col-xs-12 page-header">
+    <h2>{{page.name}}</h2>
+</div>
+<div class="col-xs-12 col-md-12">
+
+    <p>
+        <span class="glyphicon glyphicon-user"></span>
+        {{page.user.email | date:"MM/dd/yyyy @ h:mma" }}<br/>
+        <span class="glyphicon glyphicon-calendar"></span>
+        {{page.created_at | date:"MM/dd/yyyy @ h:mma" }}
+    </p>
+
+    <p ng-bind-html="page.content"></p>
+</div>
+
+
+<!-- Categories -->
+<div class="col-xs-12 page-header">
+    <h3>Categories</h3>
+</div>
+<div class="col-xs-12">
+    <div class="related-categories" ng-if="page.nodes">
+        <ul class="categoryList">
+            <li ng-repeat="node in page.nodes">
+                <span class="label label-primary">
+                    <a ui-sref="pageCategoryView({locale: locale, categoryId:node.meta_url})">
+                        {{node.name }}</a>
+                </span>&nbsp;
+            </li>
+        </ul>
+    </div>
+</div>
+<div ng-if="showComments" disqus="page.meta_url"></div>
+
+
+<!-- Reviews -->
+<div class="related-reviews">
+    <div class="col-xs-12 page-header">
+        <h3>Reviews</h3>
+    </div>
+</div>
+<div class="col-md-7">
+    <aisel-review-collection reviews="page.reviews">
+    </aisel-review-collection>
+</div>
+<div class="col-md-5">
+    <h4>Leave a review for <strong>{{page.name}}</strong></h4>
+    <aisel-review-add resource-name="'page'" resource="page">
+    </aisel-review-add>
+</div>

@@ -1,0 +1,109 @@
+<div ng-include="'/app/Aisel/Kernel/views/edit/heading.html'"></div>
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-horizontal-edit" name="editForm" role="form">
+            <tabset>
+
+                <!-- General -->
+                <tab>
+                    <tab-heading>
+                        <i class="glyphicon glyphicon-font"></i> General Information
+                    </tab-heading>
+                    <div class="tab-content">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text"
+                                   name="name"
+                                   id="name"
+                                   class="form-control"
+                                   ng-required="true"
+                                   ng-model="item.name">
+                        </div>
+                        <div class="form-group">
+                            <label for="description_short">Price</label>
+                            <input type="text"
+                                   name="price"
+                                   id="price"
+                                   class="form-control"
+                                   ng-required="true"
+                                   ng-model="item.price">
+                        </div>
+                        <div class="form-group">
+                            <label for="description_short">Description Short</label>
+
+                            <div text-angular
+                                 name="description_short"
+                                 id="description_short"
+                                 ng-required="true"
+                                 ng-model="item.description_short"
+                                    ></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+
+                            <div text-angular
+                                 name="description"
+                                 id="description"
+                                 ng-required="true"
+                                 ng-model="item.description"
+                                    ></div>
+                        </div>
+                        <ng-include src="'/app/Aisel/Kernel/views/edit/field/locale.html'"></ng-include>
+                        <ng-include src="'/app/Aisel/Kernel/views/edit/field/status.html'"></ng-include>
+                    </div>
+                </tab>
+
+                <!-- Images -->
+                <tab>
+                    <tab-heading>
+                        <i class="glyphicon glyphicon glyphicon-picture"></i> &nbsp;Images
+                    </tab-heading>
+                    <div class="tab-content">
+                        <ng-include src="'/app/Aisel/Product/views/media-images.html'"></ng-include>
+                        <ng-include src="'/app/Aisel/Product/views/media-drop-images.html'"></ng-include>
+                    </div>
+                </tab>
+
+                <!-- Nodes -->
+                <tab>
+                    <tab-heading>
+                        <i class="glyphicon glyphicon glyphicon-tags"></i> &nbsp;Nodes
+                    </tab-heading>
+                    <div class="tab-content">
+                        <ng-include src="'/app/Aisel/Kernel/views/edit/field/nodes-tree.html'"></ng-include>
+                    </div>
+                </tab>
+
+                <!-- Meta -->
+                <tab>
+                    <tab-heading>
+                        <i class="glyphicon glyphicon-list"></i> Meta
+                    </tab-heading>
+                    <div class="tab-content">
+                        <ng-include src="'/app/Aisel/Kernel/views/edit/field/meta.html'"></ng-include>
+                    </div>
+                </tab>
+
+                <!-- Dates -->
+                <tab>
+                    <tab-heading>
+                        <i class="glyphicon glyphicon-calendar"></i> Dates
+                    </tab-heading>
+                    <div class="tab-content">
+                        <ng-include src="'/app/Aisel/Kernel/views/edit/field/dates.html'"></ng-include>
+                    </div>
+                </tab>
+
+                <!-- Reviews -->
+                <tab>
+                    <tab-heading>
+                        <i class="glyphicon glyphicon-bullhorn"></i> Reviews
+                    </tab-heading>
+                    <div class="tab-content">
+                        <ng-include src="'/app/Aisel/Kernel/views/edit/field/reviews.html'"></ng-include>
+                    </div>
+                </tab>
+            </tabset>
+        </form>
+    </div>
+</div>

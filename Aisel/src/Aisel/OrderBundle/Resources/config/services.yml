@@ -1,0 +1,23 @@
+# This file is part of the Aisel package.
+#
+# (c) Ivan Proskuryakov
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+parameters:
+    aisel_order_manager.class: Aisel\OrderBundle\Manager\OrderManager
+    aisel_invoice_manager.class: Aisel\OrderBundle\Manager\InvoiceManager
+
+services:
+    aisel.order.manager:
+        class: %aisel_order_manager.class%
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@aisel.config.manager"
+            - "@aisel.cart.manager"
+
+    aisel.invoice.manager:
+        class: %aisel_invoice_manager.class%
+        arguments:
+          - "@doctrine.orm.entity_manager"

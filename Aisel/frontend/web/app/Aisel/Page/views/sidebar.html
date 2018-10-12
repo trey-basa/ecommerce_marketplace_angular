@@ -1,0 +1,19 @@
+<div class="categoryTree" ng-if="pageCategoryTree">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Pages by Category</div>
+        <div class="panel-body">
+            <div class="categories">
+                <script type="text/ng-template" id="field_renderer.html">
+                    <a id="link-6" ui-sref="pageCategoryView({locale: locale, categoryId:category.meta_url})">{{ category.name}}</a>
+
+                    <ul>
+                        <li ng-repeat="category in category.children" ng-include="'field_renderer.html'"></li>
+                    </ul>
+                </script>
+                <ul>
+                    <li ng-repeat="category in pageCategoryTree" ng-include="'field_renderer.html'"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+# This file is part of the Aisel package.
+#
+# (c) Ivan Proskuryakov
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+# Backend
+admin_api_aisel_config_get:
+    path:   /%backend_api%/config/
+    defaults:  { _controller: AiselConfigBundle:Admin/Api:get, _format: json }
+    methods: [GET]
+
+admin_api_aisel_config_put:
+    path:   /%backend_api%/config/
+    defaults:  { _controller: AiselConfigBundle:Admin/Api:save, _format: json }
+    methods: [PUT]
+
+# Frontend
+api_aisel_config:
+    path:  /%frontend_api%/{locale}/config/
+    defaults:  { _controller: AiselConfigBundle:Api:get, _format: json }
+    methods: [GET]

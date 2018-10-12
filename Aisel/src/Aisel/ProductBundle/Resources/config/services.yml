@@ -1,0 +1,21 @@
+# This file is part of the Aisel package.
+#
+# (c) Ivan Proskuryakov
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+parameters:
+    aisel_product_url_persistence_listener.class: Aisel\ProductBundle\EventListener\ProductUrlPersistenceListener
+    aisel_product_node_url_persistence_listener.class: Aisel\ProductBundle\EventListener\NodeUrlPersistenceListener
+
+services:
+    aisel_product_url_persistence_listener:
+        class: %aisel_product_url_persistence_listener.class%
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+
+    aisel_product_node_url_persistence_listener:
+        class: %aisel_product_node_url_persistence_listener.class%
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }

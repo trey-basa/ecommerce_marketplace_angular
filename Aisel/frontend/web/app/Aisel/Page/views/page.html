@@ -1,0 +1,43 @@
+<div class="">
+    <div class="col-xs-12 page-header">
+        <h2>Pages</h2>
+
+        <p class=""><span class="glyphicon glyphicon-list-alt"></span>
+            <a ui-sref="pageCategories({locale: locale})">View categories</a>
+        </p>
+    </div>
+
+    <div class="col-xs-12 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
+        <div class="sidebar" ng-include="'/app/Aisel/Page/views/sidebar.html'"></div>
+    </div>
+    <div class="col-xs-12 col-md-9">
+        <div class="col-md-12">
+            <ul class="pageList">
+                <li ng-repeat="item in collection.collection">
+                    <h2><a ui-sref="pageView({locale: locale, pageId:item.meta_url})"
+                           class="thumb">{{item.name}}</a>
+                    </h2>
+
+                    <p>
+                        <span class="glyphicon glyphicon-user"></span>
+                        {{item.user.email | date:"MM/dd/yyyy @ h:mma" }}<br/>
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        {{item.created_at | date:"MM/dd/yyyy @ h:mma" }}
+                    </p>
+
+                    <p ng-bind-html="item.content"></p>
+
+                    <p><span class="glyphicon glyphicon-calendar"></span> {{item.created_at | date:"MM/dd/yyyy @ h:mma"
+                        }}</p>
+                    <hr/>
+                </li>
+            </ul>
+        </div>
+        <div ng-include="'/app/Aisel/Kernel/views/pagination.html'"></div>
+    </div>
+</div>
+
+<div class="col-md-12 page-header">
+    <h2>New pages</h2>
+</div>
+<aisel-new-pages limit="3"></aisel-new-pages>

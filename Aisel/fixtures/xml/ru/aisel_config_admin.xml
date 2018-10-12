@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.1.9
+- http://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Sep 01, 2014 at 04:42 PM
+- Server version: 5.6.16
+- PHP Version: 5.4.24
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Database: 'aisel'
+    -->
+    <database name="aisel">
+        <!-- Table aisel_config -->
+        <table name="aisel_config">
+            <column name="id">282</column>
+            <column name="locale">ru</column>
+            <column name="entity">content</column>
+            <column name="value">{&quot;homepageContent&quot;:&quot;&lt;!-- Jumbotron --&gt;\n&lt;div class=\&quot;jumbotron\&quot;&gt;\n    &lt;h1&gt;Marketing stuff!&lt;\/h1&gt;\n    &lt;p class=\&quot;lead\&quot;&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.&lt;\/p&gt;\n    &lt;p&gt;&lt;a class=\&quot;btn btn-lg btn-success\&quot; href=\&quot;#\&quot; role=\&quot;button\&quot;&gt;Get started today&lt;\/a&gt;&lt;\/p&gt;\n&lt;\/div&gt;&quot;,&quot;footerContent&quot;:&quot;&lt;div class=\&quot;col-xs-6 text-left\&quot;&gt;\n&lt;h4&gt;About&lt;\/h4&gt;\n\n&lt;p&gt;Aisel is an open-source CMS for high-load projects based on combination of Symfony2 and AngularJS&lt;\/p&gt;\n&lt;\/div&gt;\n\n&lt;div class=\&quot;col-xs-3 text-left\&quot;&gt;\n&lt;h4&gt;Navigation&lt;\/h4&gt;\n\n&lt;ul&gt;\n\t&lt;li&gt;&lt;a href=\&quot;\/en\/contact\/\&quot;&gt;Contact us&lt;\/a&gt;&lt;\/li&gt;\n\t&lt;li&gt;&lt;a href=\&quot;\/en\/products\/\&quot;&gt;View Products&lt;\/a&gt;&lt;\/li&gt;\n\t&lt;li&gt;&lt;a href=\&quot;\/en\/user\/register\/\&quot;&gt;Create Account&lt;\/a&gt;&lt;\/li&gt;\n&lt;\/ul&gt;\n&lt;\/div&gt;&quot;}</column>
+        </table>
+        <table name="aisel_config">
+            <column name="id">283</column>
+            <column name="locale">ru</column>
+            <column name="entity">meta</column>
+            <column name="value">{&quot;defaultMetaTitle&quot;:&quot;Aisel - open source project&quot;,&quot;defaultMetaDescription&quot;:&quot;Highload CMS based on Symfony2 and AngularJS&quot;,&quot;defaultMetaKeywords&quot;:&quot;Aisel, Symfony, AngularJS&quot;}</column>
+        </table>
+        <table name="aisel_config">
+            <column name="id">284</column>
+            <column name="locale">ru</column>
+            <column name="entity">disqus</column>
+            <column name="value">{&quot;shortname&quot;:&quot;demoaiselco&quot;,&quot;status&quot;:1}</column>
+        </table>
+        <table name="aisel_config">
+            <column name="id">185</column>
+            <column name="locale">ru</column>
+            <column name="entity">general</column>
+            <column name="value">{"currency":"RUR","paymentMethods":["offline","paypal_express_checkout_nvp"]}</column>
+        </table>
+    </database>
+</pma_xml_export>

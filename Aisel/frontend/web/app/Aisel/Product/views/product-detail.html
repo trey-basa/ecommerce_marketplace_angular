@@ -1,0 +1,75 @@
+<div class="col-xs-12 page-header">
+    <h2>{{product.name}}</h2>
+</div>
+<div class="col-md-4">
+    <aisel-product-images
+            class="product-image"
+            img-style="img-rounded"
+            slider="true"
+            images="product.medias">
+    </aisel-product-images>
+</div>
+<div class="col-md-8">
+    <div class="row">
+        <div class="col-md-12">
+
+            <p>
+                <span class="glyphicon glyphicon-user"></span>
+                {{product.user.email | date:"MM/dd/yyyy @ h:mma" }}<br/>
+                <span class="glyphicon glyphicon-calendar"></span>
+                {{product.created_at | date:"MM/dd/yyyy @ h:mma" }}
+            </p>
+            <h4>
+                <span class="label label-warning">{{product.price}} {{currency}}</span>
+            </h4>
+        </div>
+        <div class="col-md-12">
+            <button type="button"
+                    ng-click="addToCart(product.id, 1)"
+                    ng-disabled="isDisabled"
+                    class="btn btn-success">
+                <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+            </button>
+        </div>
+        <div class="col-md-12">
+            <br/>
+
+            <p ng-bind-html="product.content"></p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Categories -->
+<div class="col-xs-12 page-header">
+    <h3>Categories</h3>
+</div>
+<div class="col-xs-12 col-md-12">
+    <div class="related-categories" ng-if="product.nodes">
+        <ul class="categoryList">
+            <li ng-repeat="category in product.nodes">
+                        <span class="label label-primary">
+                            <a ui-sref="productCategoryView({locale: locale, categoryId:category.meta_url})">
+                                {{category.name }}</a>
+                        </span>&nbsp;
+            </li>
+        </ul>
+    </div>
+    <div ng-if="showComments" disqus="product.meta_url"></div>
+</div>
+
+
+<!-- Reviews -->
+<div class="related-reviews">
+    <div class="col-xs-12 page-header">
+        <h3>Reviews</h3>
+    </div>
+</div>
+<div class="col-md-7">
+    <aisel-review-collection reviews="product.reviews">
+    </aisel-review-collection>
+</div>
+<div class="col-md-5">
+    <aisel-review-add resource-name="'product'" resource="product">
+    </aisel-review-add>
+</div>
